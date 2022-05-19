@@ -10,17 +10,18 @@ class Main {
 
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    StringTokenizer s;
-
-    int n = Integer.parseInt(br.readLine());
-
-    for (int i = 0; i < n; i++) {
-       s = new StringTokenizer(br.readLine()," ");
-      int a = Integer.parseInt(s.nextToken());
-      int b = Integer.parseInt(s.nextToken());
-      bw.write("Case #"+(i+1)+": "+a+" + "+b+" = "+(a+b)+ "\n");
-
+    String n = br.readLine();
+    StringTokenizer num = new StringTokenizer(n);
+    int a =Integer.parseInt(num.nextToken());
+    int b = Integer.parseInt(num.nextToken());
+    String s = br.readLine();
+     StringTokenizer st = new StringTokenizer(s);
+    for (int i = 0; i < a; i++) {
+      int number =Integer.parseInt(st.nextToken());
+      if (number < b)
+        bw.write(number+" ");
     }
+    bw.write("\n");
     br.close();
 
     bw.flush();
